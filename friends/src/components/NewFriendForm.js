@@ -19,44 +19,46 @@ const NewFriendForm = () => {
     const handleSubmit = event => {
         event.preventDefault();
         axiosWithAuth().post("/friends", newFriend)
-        .then(response => {
-            console.log(response)
-            setNewFriend({
-                name: "",
-                age: "",
-                email: ""
+            .then(response => {
+                console.log(response)
+                setNewFriend({
+                    name: "",
+                    age: "",
+                    email: ""
+                })
             })
-        })
-        .catch(error => {
-            console.log(error)
-        })
+            .catch(error => {
+                console.log(error)
+            })
     }
-
 
     return (
         <div>
             <h3>Add New Friend!</h3>
-        <form onSubmit={handleSubmit}>
-            <label>Name: </label>
-            <input 
-            type="text"
-            onChange={handleChanges}
-            value={newFriend.name}
-            />
-            <label>Age: </label>
-            <input 
-            type="num"
-            onChange={handleChanges}
-            value={newFriend.age}
-            />
-            <label>Email: </label>
-            <input 
-            type="email"
-            onChange={handleChanges}
-            value={newFriend.email}
-            />
-            <button>Add New Friend!</button>
-        </form>
+            <form onSubmit={handleSubmit}>
+                <label>Name: </label>
+                <input
+                    type="text"
+                    onChange={handleChanges}
+                    value={newFriend.name}
+                    name="name"
+                />
+                <label>Age: </label>
+                <input
+                    type="num"
+                    onChange={handleChanges}
+                    value={newFriend.age}
+                    name="age"
+                />
+                <label>Email: </label>
+                <input
+                    type="email"
+                    onChange={handleChanges}
+                    value={newFriend.email}
+                    name="email"
+                />
+                <button>Add New Friend!</button>
+            </form>
         </div>
     )
 }
