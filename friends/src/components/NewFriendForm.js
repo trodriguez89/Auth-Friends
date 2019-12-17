@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
+import styled from "styled-components";
+
+const AddButton = styled.button`
+    padding: 5px;
+    margin-left: 5px;
+`
+
 const NewFriendForm = () => {
     const [newFriend, setNewFriend] = useState({
         id: Date.now(),
         name: "",
         age: "",
-        email: ""
+        email: "",
+        image: "https://i.ebayimg.com/images/g/pK0AAOSwt8Rc6WjJ/s-l400.jpg"
     })
 
     const handleChanges = event => {
@@ -34,7 +42,7 @@ const NewFriendForm = () => {
 
     return (
         <div>
-            <h3>Add New Friend!</h3>
+            <h3>Add New Dunder Mifflin Employee</h3>
             <form onSubmit={handleSubmit}>
                 <label>Name: </label>
                 <input
@@ -57,7 +65,7 @@ const NewFriendForm = () => {
                     value={newFriend.email}
                     name="email"
                 />
-                <button>Add New Friend!</button>
+                <AddButton>Add New Employee!</AddButton>
             </form>
         </div>
     )

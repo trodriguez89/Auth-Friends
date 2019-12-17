@@ -1,8 +1,18 @@
 import React, { useState, useEffect } from "react";
 
+import styled from "styled-components";
+
 import NewFriendForm from "./NewFriendForm";
+import FriendCard from './FriendCard';
 
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import NavLoggedIn from "./NavLoggedIn";
+
+const MainContain = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+`
 
 const Friends = (props) => {
     const [friends, setFriends] = useState([])
@@ -20,14 +30,13 @@ const Friends = (props) => {
 
     return (
         <div>
+            <NavLoggedIn/>
             <NewFriendForm />
-            {friends.map(item => (
-                <div>
-                <h3>{item.name}</h3>
-                <h3>{item.age}</h3>
-                <h3>{item.email}</h3>
-                </div>
-        ))}
+            <MainContain>
+                {friends.map(item => (
+                    <FriendCard key={item.id} friends={item} />
+                ))}
+            </MainContain>
         </div>
 
     );

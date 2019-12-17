@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import NavDefault from "./NavDefault";
+
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const Login = (props) => {
@@ -33,6 +35,7 @@ const Login = (props) => {
 
     return (
         <div>
+            <NavDefault/>
             <form onSubmit = {handleSubmit}>
                 <label>Username: </label>
                 <input
