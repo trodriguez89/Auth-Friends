@@ -8,7 +8,7 @@ const AddButton = styled.button`
     margin-left: 5px;
 `
 
-const NewFriendForm = () => {
+const NewFriendForm = (props) => {
     const [newFriend, setNewFriend] = useState({
         id: Date.now(),
         name: "",
@@ -65,7 +65,7 @@ const NewFriendForm = () => {
                     value={newFriend.email}
                     name="email"
                 />
-                <AddButton>Add New Employee!</AddButton>
+                <AddButton type="submit">Add New Employee!</AddButton>
             </form>
         </div>
     )
