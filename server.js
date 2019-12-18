@@ -11,39 +11,45 @@ let nextId = 7;
 let friends = [
   {
     id: 1,
-    name: 'Rachel Green',
-    age: 30,
-    email: 'rachel@friends.com'
+    name: 'Michael Scott',
+    age: 45,
+    email: 'BestBossEver@DunderMifflin.com',
+    image: "https://vignette.wikia.nocookie.net/theoffice/images/0/02/Michael_Scott.jpg/revision/latest/scale-to-width-down/350?cb=20170701090332"
   },
   {
     id: 2,
-    name: 'Joey Tribbiani',
+    name: 'Dwight Schrute',
     age: 34,
-    email: 'joey@friends.com'
+    email: 'AssistantToThe@DunderMifflin.com',
+    image: "https://vignette.wikia.nocookie.net/theoffice/images/c/c5/Dwight_.jpg/revision/latest/scale-to-width-down/350?cb=20170701082424"
   },
   {
     id: 3,
-    name: 'Chandler Bing',
+    name: 'Jim Halpert',
     age: 32,
-    email: 'chandler@friends.com'
+    email: 'BigTuna@DunderMifflin.com',
+    image: "https://vignette.wikia.nocookie.net/theoffice/images/9/9a/Jim.jpg/revision/latest/scale-to-width-down/350?cb=20170701084550"
   },
   {
     id: 4,
-    name: 'Ross Geller',
-    age: 32,
-    email: 'ross@friends.com'
+    name: 'Creed Bratton',
+    age: 30,
+    email: 'bobody@DunderMifflin.com',
+    image: "https://vignette.wikia.nocookie.net/theoffice/images/2/20/2009Creed.jpg/revision/latest/scale-to-width-down/350?cb=20170701085348"
   },
   {
     id: 5,
-    name: 'Monica Bing',
+    name: 'Oscar Martinez',
     age: 31,
-    email: 'monica@friends.com'
+    email: 'TheCount@DunderMifflin.com',
+    image: "https://vignette.wikia.nocookie.net/theoffice/images/2/25/Oscar_Martinez.jpg/revision/latest/scale-to-width-down/350?cb=20170701085818"
   },
   {
     id: 6,
-    name: 'Phoebe Buffay-Hannigan',
+    name: 'Andy Bernard',
     age: 30,
-    email: 'phoebe@friends.com'
+    email: 'NardDog@DunderMifflin.com',
+    image: "https://vignette.wikia.nocookie.net/theoffice/images/b/b5/Andy_Bernard.jpg/revision/latest/scale-to-width-down/350?cb=20170701084205"
   }
 ];
 
@@ -62,7 +68,7 @@ function authenticator(req, res, next) {
 
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
-  if (username === 'Lambda School' && password === 'i<3Lambd4') {
+  if (username === 'Michael Scott' && password === 'password') {
     req.loggedIn = true;
     res.status(200).json({
       payload: token
